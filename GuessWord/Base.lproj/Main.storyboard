@@ -53,10 +53,10 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m9C-Yy-ZYK">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m9C-Yy-ZYK">
                                         <rect key="frame" x="0.0" y="468" width="358" height="266"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-FA-mvG">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-FA-mvG">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❓❓❓❓❓❓❓❓❓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOi-c2-Eq7">
@@ -296,7 +296,6 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="ENX-tE-pAx"/>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="230" id="U5f-4w-Kte"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
