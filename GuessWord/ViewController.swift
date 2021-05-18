@@ -15,22 +15,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var wordLabel: UILabel!
  
+    var game = Game()
+    
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+       updateUI()
+       
     }
 
+    
+    // MARK: - Update UI
+    func updateUI() {
+        print(game.hiddenWord)
+        lifeLabel.text = String.init(repeating: "❤️", count: game.life)
+        levelLabel.text = "🏆 \(game.level)"
+        wordLabel.text = game.guessedWord
+    }
+    
     
     // MARK: - Action
     @IBAction func pressedButtons(_ sender: UIButton) {
         let letter = sender.titleLabel?.text ?? "no letter"
-        print(letter)
-        
-        if letter.lowercased() == "m" {
-            imageView.image = UIImage(named: "moscow")
-        }
+        game.playGame(Character(letter.lowercased()))
+        updateUI()
     }
+    
+    
+    
+    
 }
 
