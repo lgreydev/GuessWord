@@ -27,6 +27,10 @@ class ViewController: UIViewController {
     @IBAction func pressedButtons(_ sender: UIButton) {
         let letter = sender.titleLabel?.text ?? "no letter"
         print(letter)
+        
+        if letter.lowercased() == "m" {
+            imageView.image = UIImage(named: "moscow")
+        }
     }
 }
 
