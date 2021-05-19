@@ -30,8 +30,9 @@ class Game {
     
     
     func newRound() {
-        if level >= 9 {
-            hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
+        if level == 3 {
+            var newCity = City()
+            hiddenWord = newCity.name.remove(at: Int.random(in: 0..<city.name.count))
             guessedLetter = [Character]()
             life = 6
             level = 0
@@ -50,8 +51,6 @@ class Game {
             onButton = true
         }
     }
-    
-    
     
     
     /// Checks letters for a match in 'hiddenWord'

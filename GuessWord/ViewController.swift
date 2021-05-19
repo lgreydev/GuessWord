@@ -41,15 +41,12 @@ class ViewController: UIViewController {
     // MARK: - Button Background
     /// Change the background of the button depending on the state (isEnabled)
     func buttonOn() {
-        print(#line)
         for button in letterButtons {
             if game.onButton {
-                print(#line)
                 button.isEnabled = true
                 button.backgroundColor = .systemTeal
             }
         }
-        print(#line)
         game.onButton = false
     }
     
@@ -59,7 +56,8 @@ class ViewController: UIViewController {
     func stateGame() {
         let currentWord = (wordLabel.text?.lowercased())!
         let word = currentWord.replacingOccurrences(of: " ", with: "")
-        if game.hiddenWord == word && game.level >= 9 {
+       
+        if game.hiddenWord == word && game.level >= 3 {
             messageGemeWin()
         } else if game.hiddenWord == word {
             messageNextLevel()
@@ -80,12 +78,12 @@ class ViewController: UIViewController {
     /// A window that displays a message upon the completion of a round or a guessed word.
     func messageNextLevel() {
         let alert = UIAlertController(
-            title: "YOU WIN!",
-            message: "You guessed the secret word, keep it up! 😀",
+            title: "VERY GOOD!",
+            message: "😎 😎 😎 😎 😎",
             preferredStyle: .alert)
         
         let action = UIAlertAction(
-            title: "Next Level 🚀",
+            title: "Next Level",
             style: .default) { action -> Void in
             self.extractedFunc()
         }
@@ -94,10 +92,11 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
     func messageGemeOver() {
         let alert = UIAlertController(
             title: "YOU LOSE",
-            message: "Sorry, you haven't guessed the secret word. 😢",
+            message: "😢 😢 😢 😢 😢",
             preferredStyle: .alert)
         
         let action = UIAlertAction(
@@ -109,12 +108,13 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
     
     
     func messageGemeWin() {
         let alert = UIAlertController(
             title: "YOU WIN!",
-            message: "You have reached the maximum number of points, thanks for your game! 🎉 🎉 🎉",
+            message: "🎉 🎉 🎉 🎉 🎉",
             preferredStyle: .alert)
         
         let action = UIAlertAction(
@@ -128,10 +128,7 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
+
     // MARK: - Action
     @IBAction func pressedButtons(_ sender: UIButton) {
         sender.isEnabled = false
