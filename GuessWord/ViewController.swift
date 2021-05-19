@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let currentWord = (wordLabel.text?.lowercased())!
         let word = currentWord.replacingOccurrences(of: " ", with: "")
        
-        if game.hiddenWord == word && game.level >= 3 {
+        if game.hiddenWord == word && game.level >= 4 {
             messageGemeWin()
         } else if game.hiddenWord == word {
             messageNextLevel()

@@ -31,7 +31,7 @@ class Game {
     // MARK: - Methods
     /// Each new round sets properties for a new game.
     func newRound() {
-        if level == 3 {
+        if level == 4 {
             hiddenWord = city.name.randomElement()!
             guessedLetter = [Character]()
             life = 6
