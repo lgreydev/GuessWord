@@ -9,6 +9,8 @@ This is an interesting mobile game in which you have to guess the word from the 
 
 - The number of levels until the victory is set in model <a href="https://github.com/lgreydev/GuessWord/blob/main/GuessWord/Game.swift" rel="Game.swift" target="_blank">Game.swift</a>, method  `newRound()` ,  and don't forget to change the method `stateGame()`  in <a href="https://github.com/lgreydev/GuessWord/blob/main/GuessWord/ViewController.swift" rel="ViewController.swift" target="_blank">ViewController.swift</a>.
 
+- Change Message Alert in file <a href="https://github.com/lgreydev/GuessWord/blob/main/GuessWord/ViewController.swift" rel="ViewController.swift" target="_blank">ViewController.swift</a> methods `messageNextLevel()`, `messageGameOver()`, `messageGameWin()`
+
 
 #### Portrait device orientation
 <img src="https://github.com/lgreydev/GuessWord/blob/main/Screenshot/screenshot-001.png" width="270"><img src="https://github.com/lgreydev/GuessWord/blob/main/Screenshot/screenshot-002.png" width="270"><img src="https://github.com/lgreydev/GuessWord/blob/main/Screenshot/screenshot-003.png" width="270">

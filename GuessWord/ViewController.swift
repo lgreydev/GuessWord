@@ -58,11 +58,11 @@ class ViewController: UIViewController {
         let word = currentWord.replacingOccurrences(of: " ", with: "")
        
         if game.hiddenWord == word && game.level >= 4 {
-            messageGemeWin()
+            messageGameWin()
         } else if game.hiddenWord == word {
             messageNextLevel()
         } else if game.life == 0 {
-            messageGemeOver()
+            messageGameOver()
         }
     }
     
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     }
     
     /// GAME OVER: a window that displays a message upon the completion of a round or a guessed word.
-    func messageGemeOver() {
+    func messageGameOver() {
         let alert = UIAlertController(
             title: "YOU LOSE",
             message: "😢 😢 😢 😢 😢",
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     }
     
     /// WIN GAME: - a window that displays a message upon the completion of a round or a guessed word.
-    func messageGemeWin() {
+    func messageGameWin() {
         let alert = UIAlertController(
             title: "YOU WIN!",
             message: "🎉 🎉 🎉 🎉 🎉",

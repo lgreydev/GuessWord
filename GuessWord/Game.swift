@@ -11,11 +11,11 @@ import Foundation
 class Game {
     
     // MARK: - Properties
-    var city = City()
-    var life = 6
-    var level = 0
-    lazy var hiddenWord = city.name.randomElement()!
-    var guessedLetter = [Character]()
+    private(set) var city = City()
+    private(set) var life = 6
+    private(set) var level = 0
+    private(set) lazy var hiddenWord = city.name.randomElement()!
+    private(set) var guessedLetter = [Character]()
     var onButton = false
     
     /// The word that is displayed on the screen
