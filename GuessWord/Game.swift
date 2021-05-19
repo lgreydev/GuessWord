@@ -16,6 +16,7 @@ class Game {
     var level = 0
     lazy var hiddenWord = city.name.randomElement()!
     var guessedLetter = [Character]()
+    var onButton = false
     
     /// The word that is displayed on the screen
     var guessedWord: String {
@@ -26,11 +27,33 @@ class Game {
         return wordLabel.uppercased()
     }
     
+
+    
+    func newRound() {
+        print(#function)
+        if life > 0 {
+            hiddenWord = city.name.randomElement()!
+            guessedLetter = [Character]()
+            life = 6
+            level += 1
+            onButton = true
+        } else {
+            hiddenWord = city.name.randomElement()!
+            guessedLetter = [Character]()
+            life = 6
+            level = 0
+            onButton = true
+        }
+    }
+    
+    
     /// Checks letters for a match in 'hiddenWord'
     /// - Parameter letter: which we pass when we click on the button
     fileprivate func matchLetter(_ letter: Character) {
         if hiddenWord.contains(letter) {
             guessedLetter.append(letter)
+        } else {
+            life -= 1
         }
     }
     
