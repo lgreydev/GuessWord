@@ -14,7 +14,7 @@ class Game {
     
     var life = 6
     var level = 0
-    lazy var hiddenWord = city.name.randomElement()!
+    lazy var hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
     var guessedLetter = [Character]()
     var onButton = false
     
@@ -27,24 +27,31 @@ class Game {
         return wordLabel.uppercased()
     }
     
-
+    
     
     func newRound() {
-        print(#function)
-        if life > 0 {
-            hiddenWord = city.name.randomElement()!
+        if level >= 9 {
+            hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
+            guessedLetter = [Character]()
+            life = 6
+            level = 0
+            onButton = true
+        } else if life > 0 {
+            hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
             guessedLetter = [Character]()
             life = 6
             level += 1
             onButton = true
         } else {
-            hiddenWord = city.name.randomElement()!
+            hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
             guessedLetter = [Character]()
             life = 6
             level = 0
             onButton = true
         }
     }
+    
+    
     
     
     /// Checks letters for a match in 'hiddenWord'
