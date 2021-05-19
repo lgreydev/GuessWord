@@ -9,5 +9,5 @@ import Foundation
 
 
 struct City {
-    var name = ["kiev", "paris", "london", "moscow", "tokyo", "dubai", "rome", "chicago", "toronto", "sydney", "istanbul"]
+    var name = ["kiev", "paris", "london", "moscow", "tokyo", "dubai", "rome", "chicago", "toronto", "sydney", "istanbul", "brussels", "amsterdam"]
 }

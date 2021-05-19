@@ -10,11 +10,11 @@ import Foundation
 
 class Game {
     
+    // MARK: - Properties
     var city = City()
-    
     var life = 6
     var level = 0
-    lazy var hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
+    lazy var hiddenWord = city.name.randomElement()!
     var guessedLetter = [Character]()
     var onButton = false
     
@@ -28,30 +28,29 @@ class Game {
     }
     
     
-    
+    // MARK: - Methods
+    /// Each new round sets properties for a new game.
     func newRound() {
         if level == 3 {
-            var newCity = City()
-            hiddenWord = newCity.name.remove(at: Int.random(in: 0..<city.name.count))
+            hiddenWord = city.name.randomElement()!
             guessedLetter = [Character]()
             life = 6
             level = 0
             onButton = true
         } else if life > 0 {
-            hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
+            hiddenWord = city.name.randomElement()!
             guessedLetter = [Character]()
             life = 6
             level += 1
             onButton = true
         } else {
-            hiddenWord = city.name.remove(at: Int.random(in: 0..<city.name.count))
+            hiddenWord = city.name.randomElement()!
             guessedLetter = [Character]()
             life = 6
             level = 0
             onButton = true
         }
     }
-    
     
     /// Checks letters for a match in 'hiddenWord'
     /// - Parameter letter: which we pass when we click on the button

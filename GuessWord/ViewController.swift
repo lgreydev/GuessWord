@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: - Property
+    // MARK: - Properties
     @IBOutlet weak var lifeLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -68,31 +68,29 @@ class ViewController: UIViewController {
     
     
     // MARK: - Message Alert
-   
+    /// extracted from message Alert
     fileprivate func extractedFunc() {
         self.game.newRound()
         self.updateUI()
         self.buttonOn()
     }
     
-    /// A window that displays a message upon the completion of a round or a guessed word.
+    /// NEXT ROUND: a window that displays a message upon the completion of a round or a guessed word.
     func messageNextLevel() {
         let alert = UIAlertController(
             title: "VERY GOOD!",
             message: "😎 😎 😎 😎 😎",
             preferredStyle: .alert)
-        
         let action = UIAlertAction(
             title: "Next Level",
             style: .default) { action -> Void in
             self.extractedFunc()
         }
-        
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
     
-    
+    /// GAME OVER: a window that displays a message upon the completion of a round or a guessed word.
     func messageGemeOver() {
         let alert = UIAlertController(
             title: "YOU LOSE",
@@ -109,26 +107,22 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
-    
+    /// WIN GAME: - a window that displays a message upon the completion of a round or a guessed word.
     func messageGemeWin() {
         let alert = UIAlertController(
             title: "YOU WIN!",
             message: "🎉 🎉 🎉 🎉 🎉",
             preferredStyle: .alert)
-        
         let action = UIAlertAction(
             title: "Start New Game",
             style: .default) { action -> Void in
             self.extractedFunc()
         }
-        
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
     
     
-
     // MARK: - Action
     @IBAction func pressedButtons(_ sender: UIButton) {
         sender.isEnabled = false
@@ -139,7 +133,5 @@ class ViewController: UIViewController {
         game.playGame(Character(letter.lowercased()))
         updateUI()
     }
-    
-    
 }
 
