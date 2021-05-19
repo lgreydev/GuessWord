@@ -11,6 +11,11 @@ This is an interesting mobile game in which you have to guess the word from the 
 
 - Change Message Alert in file <a href="https://github.com/lgreydev/GuessWord/blob/main/GuessWord/ViewController.swift" rel="ViewController.swift" target="_blank">ViewController.swift</a> methods `messageNextLevel()`, `messageGameOver()`, `messageGameWin()`
 
+### Technology
+- Swift code
+- MVC
+- Autolayout
+- Storyboard
 
 #### Portrait device orientation
 <img src="https://github.com/lgreydev/GuessWord/blob/main/Screenshot/screenshot-001.png" width="270"><img src="https://github.com/lgreydev/GuessWord/blob/main/Screenshot/screenshot-002.png" width="270"><img src="https://github.com/lgreydev/GuessWord/blob/main/Screenshot/screenshot-003.png" width="270">
