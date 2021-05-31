@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var letterButtons: [UIButton]!
     
     /// Model
-    var game = Game()
+    private var game = Game()
     
     
     // MARK: - ViewDidLoad
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     // MARK: - Update UI
     /// Updates the screen state from the model
-    func updateUI() {
+    private func updateUI() {
         imageView.image = UIImage(named: game.hiddenWord)
         levelLabel.text = "🏆 \(game.level)"
         wordLabel.text = game.guessedWord
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     // MARK: - Button Background
     /// Change the background of the button depending on the state (isEnabled)
-    func buttonOn() {
+    private func buttonOn() {
         for button in letterButtons {
             if game.onButton {
                 button.isEnabled = true
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     
     // MARK: - State Game
     /// Checks the state of the game, if the user guessed the word or spent all their attempts calls a Message Alert.
-    func stateGame() {
+    private func stateGame() {
         let currentWord = (wordLabel.text?.lowercased())!
         let word = currentWord.replacingOccurrences(of: " ", with: "")
        
@@ -69,14 +69,14 @@ class ViewController: UIViewController {
     
     // MARK: - Message Alert
     /// extracted from message Alert
-    fileprivate func extractedFunc() {
+    private func extractedFunc() {
         self.game.newRound()
         self.updateUI()
         self.buttonOn()
     }
     
     /// NEXT ROUND: a window that displays a message upon the completion of a round or a guessed word.
-    func messageNextLevel() {
+    private func messageNextLevel() {
         let alert = UIAlertController(
             title: "VERY GOOD!",
             message: "😎 😎 😎 😎 😎",
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     }
     
     /// GAME OVER: a window that displays a message upon the completion of a round or a guessed word.
-    func messageGameOver() {
+    private func messageGameOver() {
         let alert = UIAlertController(
             title: "YOU LOSE",
             message: "😢 😢 😢 😢 😢",
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     }
     
     /// WIN GAME: - a window that displays a message upon the completion of a round or a guessed word.
-    func messageGameWin() {
+    private func messageGameWin() {
         let alert = UIAlertController(
             title: "YOU WIN!",
             message: "🎉 🎉 🎉 🎉 🎉",
